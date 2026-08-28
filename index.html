@@ -3,219 +3,334 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UTM SOLUTIONS LLC | Enterprise Software Development & Technical Consulting</title>
-    <!-- Tailwind CSS via CDN -->
+    <title>UTM SOLUTIONS LLC | AI-Powered Web Development & Enterprise Solutions</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome for Professional Icons -->
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
                     colors: {
-                        corporate: {
-                            900: '#0B132B',
-                            800: '#1C2541',
-                            700: '#3A506B',
-                            500: '#5BC0BE',
-                            100: '#F4F7F6'
+                        brand: {
+                            dark: '#07090e',
+                            card: '#0d111a',
+                            border: '#1e293b',
+                            accent: '#38bdf8',
+                            purple: '#818cf8',
+                            text: '#94a3b8'
                         }
                     }
                 }
             }
         }
     </script>
+    <style>
+        .glass-card {
+            background: rgba(13, 17, 26, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-gradient {
+            background: linear-gradient(135deg, #0284c7 0%, #4f46e5 100%);
+        }
+        .btn-gradient:hover {
+            background: linear-gradient(135deg, #0369a1 0%, #4338ca 100%);
+        }
+    </style>
 </head>
-<body class="bg-corporate-100 text-gray-800 font-sans antialiased">
+<body class="bg-brand-dark text-gray-100 font-sans antialiased selection:bg-brand-accent selection:text-black">
 
     <!-- NAVIGATION BAR -->
-    <nav class="bg-corporate-900 text-white sticky top-0 z-50 shadow-md">
+    <nav class="fixed top-0 w-full z-50 glass-card border-b border-brand-border/50">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <i class="fa-solid fa-layer-group text-corporate-500 text-2xl"></i>
-                <span class="font-bold text-xl tracking-wider">UTM SOLUTIONS LLC</span>
+            <a href="#" class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-sky-500/20">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <span class="font-extrabold text-xl tracking-tight text-white">UTM <span class="text-brand-accent">SOLUTIONS</span></span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-brand-text">
+                <a href="#about" class="hover:text-white transition">About</a>
+                <a href="#services" class="hover:text-white transition">Capabilities</a>
+                <a href="#ai-solutions" class="hover:text-white transition">AI Agents</a>
+                <a href="#compliance" class="hover:text-white transition">Compliance</a>
             </div>
-            <div class="hidden md:flex space-x-8 font-medium text-sm tracking-wide">
-                <a href="#about" class="hover:text-corporate-500 transition duration-300">About Us</a>
-                <a href="#services" class="hover:text-corporate-500 transition duration-300">Capabilities</a>
-                <a href="#compliance" class="hover:text-corporate-500 transition duration-300">Compliance</a>
-                <a href="#contact" class="bg-corporate-500 text-corporate-900 px-4 py-2 rounded font-semibold hover:bg-white hover:text-corporate-900 transition duration-300">Contact Corporate</a>
+
+            <div class="hidden md:flex items-center">
+                <a href="#contact" class="btn-gradient text-white text-xs font-semibold px-5 py-2.5 rounded-lg shadow-lg hover:shadow-sky-500/10 transition duration-300">
+                    Get Started <i class="fa-solid fa-arrow-right ml-1"></i>
+                </a>
             </div>
+
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-400 hover:text-white focus:outline-none">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-6 space-y-3 glass-card border-t border-brand-border">
+            <a href="#about" class="block text-brand-text hover:text-white py-1">About</a>
+            <a href="#services" class="block text-brand-text hover:text-white py-1">Capabilities</a>
+            <a href="#ai-solutions" class="block text-brand-text hover:text-white py-1">AI Agents</a>
+            <a href="#compliance" class="block text-brand-text hover:text-white py-1">Compliance</a>
+            <a href="#contact" class="block btn-gradient text-center text-white text-xs font-semibold py-2.5 rounded-lg">Get Started</a>
         </div>
     </nav>
 
     <!-- HERO SECTION -->
-    <header class="bg-corporate-900 text-white py-24 md:py-32 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#5bc0be_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    <header class="pt-36 pb-24 md:pt-48 md:pb-32 relative overflow-hidden">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-sky-500/10 rounded-full blur-[120px] pointer-events-none"></div>
         <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
-            <span class="text-corporate-500 uppercase tracking-widest font-semibold text-sm block mb-3">Wyoming, USA Registered Corporation</span>
-            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6">
-                Architecting Scalable Infrastructure <br class="hidden md:inline"><span class="text-corporate-500">For Modern Enterprises</span>
+            <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full glass-card border border-sky-500/30 text-xs font-medium text-brand-accent mb-6">
+                <span class="flex h-2 w-2 rounded-full bg-sky-400 animate-ping"></span>
+                <span>Wyoming, USA Registered Legal Entity</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                Next-Gen Web Development <br class="hidden md:inline">
+                <span class="text-gradient">Powered by Smart AI Automation</span>
             </h1>
-            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
-                UTM SOLUTIONS LLC delivers elite full-stack software development, robust API integrations, and premium technical consulting to drive digital transformation safely and efficiently.
+            
+            <p class="text-base md:text-lg text-brand-text max-w-3xl mx-auto mb-10 leading-relaxed">
+                UTM SOLUTIONS LLC builds high-converting enterprise websites, robust APIs, and integrates custom AI Agents designed to automate sales, customer support, and lead qualification 24/7.
             </p>
-            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
-                <a href="#services" class="w-full sm:w-auto bg-corporate-500 text-corporate-900 px-8 py-3 rounded font-bold shadow-lg hover:bg-white transition duration-300 text-center">Our Capabilities</a>
-                <a href="#contact" class="w-full sm:w-auto border border-gray-400 text-white px-8 py-3 rounded font-bold hover:bg-white hover:text-corporate-900 transition duration-300 text-center">Corporate Inquiry</a>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#contact" class="w-full sm:w-auto btn-gradient text-white px-8 py-3.5 rounded-xl font-semibold shadow-lg shadow-sky-500/20 hover:scale-[1.02] transition duration-300">
+                    Book Technical Call
+                </a>
+                <a href="#services" class="w-full sm:w-auto glass-card text-gray-300 hover:text-white hover:border-brand-accent/50 px-8 py-3.5 rounded-xl font-semibold transition duration-300">
+                    Explore Capabilities
+                </a>
             </div>
         </div>
     </header>
 
-    <!-- CORPORATE OVERVIEW / ABOUT -->
-    <section id="about" class="py-20 bg-white">
+    <!-- STATS BAR -->
+    <section class="border-y border-brand-border/60 bg-brand-dark/50 py-8">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <p class="text-3xl font-extrabold text-white">99.9%</p>
+                <p class="text-xs text-brand-text mt-1">Uptime Architecture</p>
+            </div>
+            <div>
+                <p class="text-3xl font-extrabold text-brand-accent">24/7</p>
+                <p class="text-xs text-brand-text mt-1">AI Automated Lead Capture</p>
+            </div>
+            <div>
+                <p class="text-3xl font-extrabold text-white">100%</p>
+                <p class="text-xs text-brand-text mt-1">US Legal Compliance</p>
+            </div>
+            <div>
+                <p class="text-3xl font-extrabold text-brand-purple">2-3x</p>
+                <p class="text-xs text-brand-text mt-1">Faster Delivery Cycles</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORPORATE OVERVIEW -->
+    <section id="about" class="py-24 relative">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <span class="text-corporate-700 font-bold uppercase tracking-wider text-sm">Corporate Overview</span>
-                    <h2 class="text-3xl font-bold text-corporate-900 mt-2 mb-6">About UTM SOLUTIONS LLC</h2>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        Established in the state of Wyoming, USA, UTM SOLUTIONS LLC operates as a premier full-stack technical vendor. We engineering custom, highly resilient B2B software architectures and complex data systems that align tightly with global regulatory and operational standards.
+                    <span class="text-brand-accent font-semibold uppercase tracking-widest text-xs">Corporate Profile</span>
+                    <h2 class="text-3xl font-bold text-white mt-2 mb-6">Engineering Modern Digital Ecosystems</h2>
+                    <p class="text-brand-text mb-4 leading-relaxed text-sm">
+                        Registered in the state of Wyoming, USA, UTM SOLUTIONS LLC provides end-to-end software development, custom API integrations, and smart AI workflow automation for growing businesses and enterprises worldwide.
                     </p>
-                    <p class="text-gray-600 leading-relaxed">
-                        Our technical deployment strategies cater closely to small and medium-sized enterprises (SMEs) seeking secure cloud integration, localized technical advisory, and reliable transactional integrity across digital ecosystems.
+                    <p class="text-brand-text leading-relaxed text-sm">
+                        We bridge the gap between traditional web applications and modern AI capabilities, delivering secure, scalable, and high-performing digital platforms tailored to your core business goals.
                     </p>
                 </div>
-                <div class="bg-corporate-100 p-8 rounded-lg border border-gray-200 shadow-sm">
-                    <h3 class="text-xl font-bold text-corporate-900 mb-4"><i class="fa-solid fa-building text-corporate-700 mr-2"></i> Entity Registry Information</h3>
-                    <ul class="space-y-3 text-sm text-gray-700">
-                        <li class="border-b border-gray-200 pb-2"><strong class="text-corporate-900">Legal Corporate Name:</strong> UTM SOLUTIONS LLC</li>
-                        <li class="border-b border-gray-200 pb-2"><strong class="text-corporate-900">Jurisdiction:</strong> Wyoming, USA</li>
-                        <li class="border-b border-gray-200 pb-2"><strong class="text-corporate-900">Primary Specialization:</strong> Technology Consulting & Software Development</li>
-                        <li><strong class="text-corporate-900">Official Correspondence:</strong> hamzaraha2004@gmail.com</li>
-                    </ul>
+                
+                <div class="glass-card p-8 rounded-2xl border border-brand-border">
+                    <h3 class="text-lg font-bold text-white mb-6 flex items-center">
+                        <i class="fa-solid fa-shield-halved text-brand-accent mr-3"></i> Entity Registry Information
+                    </h3>
+                    <div class="space-y-4 text-sm text-brand-text">
+                        <div class="flex justify-between border-b border-brand-border/60 pb-3">
+                            <span>Legal Corporate Name</span>
+                            <strong class="text-white">UTM SOLUTIONS LLC</strong>
+                        </div>
+                        <div class="flex justify-between border-b border-brand-border/60 pb-3">
+                            <span>Jurisdiction</span>
+                            <strong class="text-white">Wyoming, USA</strong>
+                        </div>
+                        <div class="flex justify-between border-b border-brand-border/60 pb-3">
+                            <span>Specialization</span>
+                            <strong class="text-white">Web Dev & AI Automation</strong>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Official Contact</span>
+                            <strong class="text-brand-accent">contact@utmsolutions.com</strong>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SERVICES & CAPABILITIES SECTION -->
-    <section id="services" class="py-20 bg-corporate-100">
+    <!-- CAPABILITIES SECTION -->
+    <section id="services" class="py-24 bg-brand-dark/40 border-t border-brand-border/40">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-corporate-900">Capabilities & Technical Catalog</h2>
-                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Structured service architecture developed with high enterprise standards and strict industry execution frameworks.</p>
+                <span class="text-brand-purple font-semibold uppercase tracking-widest text-xs">Technical Services</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">Core Development Capabilities</h2>
+                <p class="text-brand-text mt-3 max-w-xl mx-auto text-sm">Built using high-grade modern tech stacks to deliver maximum performance, speed, and security.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Service 1 -->
-                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition duration-300">
-                    <div class="w-12 h-12 bg-corporate-900 text-corporate-500 rounded flex items-center justify-center text-xl font-bold mb-6">1</div>
-                    <h3 class="text-xl font-bold text-corporate-900 mb-3">Web Development Services</h3>
-                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">We build scalable, high-performance web applications tailored to critical corporate and business needs. Our optimized production stacks utilize robust tech matrices for fluid processing.</p>
-                    <div class="bg-corporate-100 p-4 rounded text-xs space-y-2 text-gray-700">
-                        <div><strong>Frontend:</strong> React.js, Next.js, Tailwind CSS</div>
-                        <div><strong>Backend:</strong> Node.js, Python (Django/FastAPI)</div>
-                        <div><strong>Database:</strong> PostgreSQL, MongoDB, Redis</div>
+                <div class="glass-card p-6 rounded-2xl border border-brand-border hover:border-brand-accent/40 transition duration-300">
+                    <div class="w-12 h-12 bg-sky-500/10 text-brand-accent rounded-xl flex items-center justify-center text-xl font-bold mb-6">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Web Development</h3>
+                    <p class="text-brand-text text-xs leading-relaxed mb-6">High-performance corporate sites, landing pages, and Web Apps engineered with modern frameworks.</p>
+                    <div class="bg-brand-dark/80 p-3 rounded-lg text-[11px] text-brand-text space-y-1 font-mono">
+                        <div>Next.js / React / Framer</div>
+                        <div>Node.js / Python</div>
                     </div>
                 </div>
 
                 <!-- Service 2 -->
-                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition duration-300">
-                    <div class="w-12 h-12 bg-corporate-900 text-corporate-500 rounded flex items-center justify-center text-xl font-bold mb-6">2</div>
-                    <h3 class="text-xl font-bold text-corporate-900 mb-3">API Integration & Development</h3>
-                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">Specializing in securely connecting third-party services and building robust internal enterprise APIs to streamline heavy business data flows and workflows flawlessly.</p>
-                    <div class="bg-corporate-100 p-4 rounded text-xs space-y-2 text-gray-700">
-                        <div><strong>Payment Gateways:</strong> Stripe, PayPal Integrations</div>
-                        <div><strong>Connectivity:</strong> Enterprise CRM & ERP Protocols</div>
-                        <div><strong>Architecture:</strong> Custom RESTful & GraphQL APIs</div>
+                <div class="glass-card p-6 rounded-2xl border border-brand-border hover:border-brand-accent/40 transition duration-300">
+                    <div class="w-12 h-12 bg-indigo-500/10 text-brand-purple rounded-xl flex items-center justify-center text-xl font-bold mb-6">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">AI Agents & Chatbots</h3>
+                    <p class="text-brand-text text-xs leading-relaxed mb-6">Custom trained AI assistants that handle customer support, qualify leads, and auto-book appointments.</p>
+                    <div class="bg-brand-dark/80 p-3 rounded-lg text-[11px] text-brand-text space-y-1 font-mono">
+                        <div>Voiceflow / Botpress</div>
+                        <div>OpenAI API / Custom Data</div>
                     </div>
                 </div>
 
                 <!-- Service 3 -->
-                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition duration-300">
-                    <div class="w-12 h-12 bg-corporate-900 text-corporate-500 rounded flex items-center justify-center text-xl font-bold mb-6">3</div>
-                    <h3 class="text-xl font-bold text-corporate-900 mb-3">Technical Consulting</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Providing thorough strategic advice on software lifecycle management, enterprise-grade cloud migrations (AWS / Google Cloud), and secure overall digital scaling for modern small-to-medium enterprises.</p>
+                <div class="glass-card p-6 rounded-2xl border border-brand-border hover:border-brand-accent/40 transition duration-300">
+                    <div class="w-12 h-12 bg-sky-500/10 text-brand-accent rounded-xl flex items-center justify-center text-xl font-bold mb-6">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">API Integration</h3>
+                    <p class="text-brand-text text-xs leading-relaxed mb-6">Seamless connectivity between payment portals, CRM systems, and third-party software workflows.</p>
+                    <div class="bg-brand-dark/80 p-3 rounded-lg text-[11px] text-brand-text space-y-1 font-mono">
+                        <div>Stripe / PayPal Gateways</div>
+                        <div>RESTful / GraphQL APIs</div>
+                    </div>
                 </div>
 
                 <!-- Service 4 -->
-                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition duration-300">
-                    <div class="w-12 h-12 bg-corporate-900 text-corporate-500 rounded flex items-center justify-center text-xl font-bold mb-6">4</div>
-                    <h3 class="text-xl font-bold text-corporate-900 mb-3">UI/UX Design & Prototyping</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Creating clean, secure, and highly intuitive financial/commercial interfaces. We ensure seamless user journeys mapped precisely through professional interactive prototyping and functional wireframes.</p>
+                <div class="glass-card p-6 rounded-2xl border border-brand-border hover:border-brand-accent/40 transition duration-300">
+                    <div class="w-12 h-12 bg-indigo-500/10 text-brand-purple rounded-xl flex items-center justify-center text-xl font-bold mb-6">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Workflow Automation</h3>
+                    <p class="text-brand-text text-xs leading-relaxed mb-6">Automating repetitive operational tasks connecting websites to CRMs, Email, and internal databases.</p>
+                    <div class="bg-brand-dark/80 p-3 rounded-lg text-[11px] text-brand-text space-y-1 font-mono">
+                        <div>Make.com / n8n</div>
+                        <div>Zapier / Webhooks</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- COMPLIANCE & RISK MANAGEMENT SECTION -->
-    <section id="compliance" class="py-20 bg-white">
+    <!-- COMPLIANCE & SECURITY -->
+    <section id="compliance" class="py-20">
         <div class="max-w-5xl mx-auto px-6 text-center">
-            <i class="fa-solid fa-shield-halved text-corporate-700 text-5xl mb-6"></i>
-            <h2 class="text-3xl font-bold text-corporate-900 mb-4">Enterprise Compliance & Trust Controls</h2>
-            <p class="text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-                UTM SOLUTIONS LLC enforces rigorous data architecture safeguards, strict operational risk management protocols, and compliant software deployment practices. We ensure full continuous alignment with top-tier technical and standard corporate processing requirements.
+            <div class="w-16 h-16 bg-sky-500/10 text-brand-accent rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6">
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <h2 class="text-3xl font-bold text-white mb-4">Enterprise Compliance & Data Security</h2>
+            <p class="text-brand-text max-w-2xl mx-auto text-sm leading-relaxed mb-10">
+                UTM SOLUTIONS LLC follows strict encryption protocols, legal standards, and secure deployment pipelines to safeguard corporate operations and transactional integrity.
             </p>
             <div class="grid sm:grid-cols-3 gap-6 text-left">
-                <div class="p-4 border-l-4 border-corporate-700 bg-corporate-100">
-                    <h4 class="font-bold text-corporate-900 mb-1">Corporate Security</h4>
-                    <p class="text-xs text-gray-600">Encrypted transmission models matching localized enterprise parameters.</p>
+                <div class="glass-card p-5 rounded-xl border border-brand-border">
+                    <h4 class="font-bold text-white text-sm mb-1"><i class="fa-solid fa-shield text-brand-accent mr-2"></i> Data Privacy</h4>
+                    <p class="text-xs text-brand-text">End-to-end encrypted transmission models built to global security standards.</p>
                 </div>
-                <div class="p-4 border-l-4 border-corporate-700 bg-corporate-100">
-                    <h4 class="font-bold text-corporate-900 mb-1">KYC Integration Readiness</h4>
-                    <p class="text-xs text-gray-600">Architectures fully optimized to process secure payment node integrations smoothly.</p>
+                <div class="glass-card p-5 rounded-xl border border-brand-border">
+                    <h4 class="font-bold text-white text-sm mb-1"><i class="fa-solid fa-credit-card text-brand-purple mr-2"></i> Payment Gateways</h4>
+                    <p class="text-xs text-brand-text">Seamless Stripe & merchant platform integration readiness.</p>
                 </div>
-                <div class="p-4 border-l-4 border-corporate-700 bg-corporate-100">
-                    <h4 class="font-bold text-corporate-900 mb-1">Full Traceability</h4>
-                    <p class="text-xs text-gray-600">Explicit engineering practices maintaining strict operational accountability.</p>
+                <div class="glass-card p-5 rounded-xl border border-brand-border">
+                    <h4 class="font-bold text-white text-sm mb-1"><i class="fa-solid fa-file-contract text-brand-accent mr-2"></i> Legal Protection</h4>
+                    <p class="text-xs text-brand-text">Full legal accountability operating under Wyoming USA corporate statutes.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CONTACT SECTION -->
-    <section id="contact" class="py-20 bg-corporate-900 text-white">
-        <div class="max-w-4xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold">Initiate Corporate Consultation</h2>
-                <p class="text-gray-400 mt-3 text-sm">Please submit your business inquiries via our encrypted operational channel below.</p>
+    <section id="contact" class="py-24 bg-brand-dark/60 border-t border-brand-border/60">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-white">Start Your Project Consultation</h2>
+                <p class="text-brand-text mt-2 text-sm">Fill out the inquiry form below to receive a custom proposal and technical scope.</p>
             </div>
             
-            <form action="#" method="POST" class="space-y-6 bg-corporate-800 p-8 rounded-lg shadow-xl border border-gray-700" onsubmit="event.preventDefault(); alert('Inquiry Simulated Successfully. Corporate teams respond via email.');">
+            <form action="#" method="POST" class="glass-card p-8 rounded-2xl border border-brand-border space-y-6" onsubmit="event.preventDefault(); alert('Thank you! Our technical team will respond via email within 24 hours.');">
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
-                        <label class="block text-xs uppercase tracking-wider text-gray-400 font-bold mb-2">Full Name / Corporate Representative</label>
-                        <input type="text" required class="w-full bg-corporate-900 border border-gray-700 rounded p-3 text-white focus:outline-none focus:border-corporate-500 text-sm">
+                        <label class="block text-xs font-semibold text-brand-text uppercase mb-2">Representative Name</label>
+                        <input type="text" required placeholder="John Doe" class="w-full bg-brand-dark/80 border border-brand-border rounded-lg p-3 text-white text-sm focus:outline-none focus:border-brand-accent transition">
                     </div>
                     <div>
-                        <label class="block text-xs uppercase tracking-wider text-gray-400 font-bold mb-2">Official Business Email</label>
-                        <input type="email" required class="w-full bg-corporate-900 border border-gray-700 rounded p-3 text-white focus:outline-none focus:border-corporate-500 text-sm">
+                        <label class="block text-xs font-semibold text-brand-text uppercase mb-2">Corporate Email</label>
+                        <input type="email" required placeholder="john@company.com" class="w-full bg-brand-dark/80 border border-brand-border rounded-lg p-3 text-white text-sm focus:outline-none focus:border-brand-accent transition">
                     </div>
                 </div>
                 <div>
-                    <label class="block text-xs uppercase tracking-wider text-gray-400 font-bold mb-2">Scope of Technical Consultation</label>
-                    <textarea rows="4" required class="w-full bg-corporate-900 border border-gray-700 rounded p-3 text-white focus:outline-none focus:border-corporate-500 text-sm" placeholder="Please detail your web infrastructure, API development, or consulting requirements..."></textarea>
+                    <label class="block text-xs font-semibold text-brand-text uppercase mb-2">Project Scope / Requirements</label>
+                    <textarea rows="4" required placeholder="Tell us about your website, AI Chatbot, or API integration requirements..." class="w-full bg-brand-dark/80 border border-brand-border rounded-lg p-3 text-white text-sm focus:outline-none focus:border-brand-accent transition"></textarea>
                 </div>
-                <div class="text-center">
-                    <button type="submit" class="bg-corporate-500 text-corporate-900 font-bold px-8 py-3 rounded hover:bg-white transition duration-300 w-full md:w-auto text-sm tracking-wide">Submit Formal Request</button>
-                </div>
+                <button type="submit" class="w-full btn-gradient text-white font-semibold py-3.5 rounded-xl shadow-lg shadow-sky-500/20 hover:scale-[1.01] transition duration-300 text-sm">
+                    Submit Project Inquiry
+                </button>
             </form>
             
-            <div class="text-center mt-8 text-xs text-gray-400">
-                Direct Corporate Communication Network: <a href="mailto:hamzaraha2004@gmail.com" class="text-corporate-500 underline">hamzaraha2004@gmail.com</a>
+            <div class="text-center mt-6 text-xs text-brand-text">
+                Direct Corporate Communication: <a href="mailto:contact@utmsolutions.com" class="text-brand-accent hover:underline">contact@utmsolutions.com</a>
             </div>
         </div>
     </section>
 
-    <!-- CORPORATE FOOTER -->
-    <footer class="bg-black text-gray-500 py-12 text-xs border-t border-gray-900">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-6 items-center">
+    <!-- FOOTER -->
+    <footer class="border-t border-brand-border py-12 text-xs text-brand-text">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
             <div>
-                <p class="font-bold text-gray-400 text-sm mb-2">UTM SOLUTIONS LLC</p>
-                <p class="mb-1">Registered Entity Jurisdiction: Wyoming, USA</p>
-                <p>&copy; 2026 UTM SOLUTIONS LLC. All Corporate Rights Reserved.</p>
+                <p class="font-bold text-white text-sm">UTM SOLUTIONS LLC</p>
+                <p class="mt-1">&copy; 2026 UTM SOLUTIONS LLC. Registered Entity in Wyoming, USA.</p>
             </div>
-            <div class="md:text-right space-x-4">
-                <span class="hover:text-white cursor-pointer">Privacy Policy</span>
-                <span class="hover:text-white cursor-pointer">Terms of Commercial Service</span>
-                <span class="hover:text-white cursor-pointer">Legal Disclaimer</span>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition">Terms of Service</a>
+                <a href="#" class="hover:text-white transition">Legal Disclaimer</a>
             </div>
-        </div>
-        <div class="max-w-7xl mx-auto px-6 mt-6 pt-6 border-t border-gray-900 text-justify text-[10px] leading-relaxed text-gray-600">
-            <strong>Regulatory Disclaimer:</strong> UTM SOLUTIONS LLC is a technical service vendor and consultancy provider. We do not offer registered legal, sovereign banking, or custodial financial asset services. All corporate engineering products align with localized technical compliance procedures.
         </div>
     </footer>
 
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
