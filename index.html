@@ -3,8 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UTM — Web Engineering + Embedded AI</title>
-<meta name="description" content="UTM designs and engineers high-performance websites with custom-trained AI chatbots embedded at the core — live 24/7, capturing leads around the clock.">
+<title>UTM — Websites with Custom-Trained AI Chatbots Built In</title>
+<meta name="description" content="UTM is a web design and development studio that builds custom landing pages, business websites, and e-commerce stores with a custom-trained AI chatbot embedded at the core. Landing pages from $349, corporate sites from $899, e-commerce from $1,499.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.utmsolutionsllc.online/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UTM">
+<meta property="og:url" content="https://www.utmsolutionsllc.online/">
+<meta property="og:title" content="UTM — Websites with Custom-Trained AI Chatbots Built In">
+<meta property="og:description" content="Custom-built websites — landing pages, corporate sites, and e-commerce stores — each shippable with a custom-trained AI chatbot embedded at the core.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="UTM — Websites with Custom-Trained AI Chatbots Built In">
+<meta name="twitter:description" content="Custom-built websites with a custom-trained AI chatbot embedded at the core — live 24/7, capturing leads around the clock.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -480,6 +491,59 @@
   .wa-fab .ring{position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:wa-ping 2.2s infinite;}
   @keyframes wa-ping{0%{transform:scale(1);opacity:.7;}100%{transform:scale(1.9);opacity:0;}}
 
+  /* ===================== CHAT ASSISTANT FAB ===================== */
+  .chat-fab{
+    position:fixed;bottom:26px;inset-inline-end:26px;z-index:400;
+    display:flex;align-items:center;gap:10px;
+    padding:14px 22px 14px 18px;border-radius:999px;border:none;
+    background:#0c1420;color:#fff;
+    box-shadow:0 14px 34px -10px rgba(0,0,0,0.5);
+    font-family:var(--body);font-weight:700;font-size:15px;
+    cursor:pointer;
+  }
+  .chat-fab .dot{width:9px;height:9px;border-radius:50%;background:#3ddc84;flex:none;animation:chat-fab-pulse 2s infinite;}
+  @keyframes chat-fab-pulse{0%{box-shadow:0 0 0 0 rgba(61,220,132,.55);}70%{box-shadow:0 0 0 8px rgba(61,220,132,0);}100%{box-shadow:0 0 0 0 rgba(61,220,132,0);}}
+  .chat-fab svg{width:19px;height:19px;flex:none;}
+
+  .chat-widget{
+    position:fixed;bottom:96px;inset-inline-end:26px;z-index:410;
+    width:360px;max-width:88vw;max-height:70vh;
+    background:var(--bg-1);border:1px solid var(--border-strong);border-radius:20px;
+    box-shadow:0 24px 60px -12px rgba(0,0,0,0.45);
+    display:flex;flex-direction:column;overflow:hidden;
+    opacity:0;transform:translateY(16px) scale(.97);pointer-events:none;
+    transition:opacity .22s var(--ease), transform .22s var(--ease);
+  }
+  .chat-widget.open{opacity:1;transform:translateY(0) scale(1);pointer-events:auto;}
+  .chat-widget-head{background:#0c1420;color:#fff;padding:16px 18px;display:flex;align-items:center;gap:12px;flex:none;}
+  .chat-widget-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(145deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;flex:none;}
+  .chat-widget-avatar svg{width:19px;height:19px;color:#0c1420;}
+  .chat-widget-head-text{flex:1;min-width:0;}
+  .chat-widget-head-text b{display:block;font-size:15px;}
+  .chat-widget-head-text span{display:flex;align-items:center;gap:6px;font-size:12px;color:#9db0c9;margin-top:2px;}
+  .chat-widget-head-text span::before{content:"";width:7px;height:7px;border-radius:50%;background:#3ddc84;flex:none;}
+  .chat-widget-close{background:transparent;border:none;color:#9db0c9;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;cursor:pointer;}
+  .chat-widget-close:hover{background:rgba(255,255,255,0.1);color:#fff;}
+  .chat-widget-close svg{width:15px;height:15px;}
+
+  .chat-widget-body{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:12px;}
+  .cw-msg{max-width:86%;padding:11px 14px;border-radius:14px;font-size:13.5px;line-height:1.5;}
+  .cw-msg.bot{background:var(--bg-2);border:1px solid var(--border);align-self:flex-start;border-end-start-radius:3px;}
+  .cw-msg.user{background:var(--accent);color:var(--accent-contrast);align-self:flex-end;border-end-end-radius:3px;font-weight:500;}
+  .cw-suggested-label{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;color:var(--text-2);margin-top:4px;}
+  .cw-chips{display:flex;flex-wrap:wrap;gap:8px;}
+  .cw-chip{background:var(--bg-2);border:1px solid var(--border);color:var(--text-0);border-radius:999px;padding:9px 14px;font-size:12.5px;font-weight:500;cursor:pointer;transition:border-color .2s, background .2s;}
+  .cw-chip:hover{border-color:var(--border-strong);background:var(--border);}
+  .cw-wa-cta{display:inline-flex;align-items:center;gap:8px;margin-top:6px;background:#25D366;color:#04140b;border:none;border-radius:10px;padding:10px 16px;font-weight:700;font-size:13px;cursor:pointer;align-self:flex-start;}
+  .cw-wa-cta svg{width:15px;height:15px;}
+
+  .chat-widget-foot{flex:none;border-top:1px solid var(--border);padding:12px 14px;}
+  .cw-input-row{display:flex;align-items:center;gap:8px;background:var(--bg-2);border:1px solid var(--border);border-radius:999px;padding:6px 6px 6px 16px;}
+  .cw-input-row input{flex:1;border:none;background:transparent;outline:none;font-family:var(--body);font-size:13.5px;color:var(--text-0);}
+  .cw-send{width:34px;height:34px;border-radius:50%;background:var(--accent);border:none;display:flex;align-items:center;justify-content:center;flex:none;cursor:pointer;color:var(--accent-contrast);}
+  .cw-send svg{width:15px;height:15px;}
+  .cw-powered{text-align:center;font-family:var(--mono);font-size:10px;color:var(--text-2);margin-top:8px;}
+
   /* ===================== WHATSAPP PROACTIVE NUDGE ===================== */
   .wa-nudge{
     position:fixed;bottom:98px;inset-inline-end:26px;z-index:399;
@@ -582,6 +646,104 @@
 @keyframes load-fade-down{from{opacity:0;transform:translateY(-10px);}to{opacity:1;transform:translateY(0);}}
 </style>
 <style>header{animation:load-fade-down .6s cubic-bezier(.16,.8,.24,1) both;}</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "UTM",
+  "description": "UTM is a web design and development studio that builds custom landing pages, business websites, and e-commerce stores, each shippable with a custom-trained AI chatbot embedded at the core.",
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Landing Page Design & Development",
+        "description": "A custom-built 1-2 page landing page, mobile-responsive, with basic on-page SEO."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Corporate Website Design & Development",
+        "description": "A custom-built 5-7 page business website for growing teams."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "E-Commerce Website Design & Development",
+        "description": "A full online store, ready to sell, with product catalog support."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Custom-Trained AI Chatbot Integration",
+        "description": "A chatbot trained on a business's own content and offers, embedded directly inside the website to answer visitor questions and capture leads 24/7."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What's included in the free blueprint call?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A 30-minute call where UTM maps the site's structure, discusses AI chatbot needs, and recommends the right plan, with no obligation to continue."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need an existing website?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. UTM builds from scratch, or can redesign and upgrade an existing website."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a typical website build take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Landing pages ship in about two weeks. Full websites with an embedded AI chatbot typically take four to six weeks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does UTM support the site after launch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every plan includes a support window, and ongoing care plans are available for continued updates and monitoring."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I upgrade my plan later?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Clients can move from Standard to Pro at any point as their needs grow."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does UTM build bilingual English/Arabic websites?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every UTM build can support bilingual EN/AR layouts, including full right-to-left support, and the embedded AI chatbot can respond in both languages."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body data-theme="light">
 
@@ -918,11 +1080,31 @@
   </div>
 </div>
 
-<!-- ===================== WHATSAPP FAB ===================== -->
-<button class="wa-fab" id="wa-fab" data-open-modal aria-label="Chat on WhatsApp">
-  <span class="ring"></span>
-  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.6 6.32A8.86 8.86 0 0 0 3.06 16.9L2 21l4.2-1.1a8.83 8.83 0 0 0 4.24 1.08h.01a8.86 8.86 0 0 0 8.85-8.85 8.8 8.8 0 0 0-1.7-5.81ZM10.45 19.4h-.01a7.35 7.35 0 0 1-3.75-1.03l-.27-.16-2.5.65.66-2.43-.17-.25a7.36 7.36 0 1 1 13.68-3.79 7.37 7.37 0 0 1-7.64 7.01Zm4.04-5.5c-.22-.11-1.3-.64-1.5-.72-.2-.07-.35-.11-.5.11-.15.22-.57.72-.7.87-.13.15-.26.16-.48.05a6 6 0 0 1-1.78-1.1 6.7 6.7 0 0 1-1.23-1.53c-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.4.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.4-.06-.11-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38h-.43c-.15 0-.4.06-.6.28-.2.22-.8.78-.8 1.9s.82 2.2.93 2.36c.11.15 1.62 2.47 3.92 3.47.55.24.98.38 1.31.48.55.17 1.05.15 1.45.09.44-.07 1.3-.53 1.49-1.04.18-.51.18-.95.13-1.04-.05-.1-.2-.15-.42-.26Z"/></svg>
+<!-- ===================== CHAT ASSISTANT FAB + WIDGET ===================== -->
+<button class="chat-fab" id="chat-fab" aria-label="Chat with us">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+  <span data-i18n="chatWidget.fabLabel">Chat with us</span>
+  <span class="dot"></span>
 </button>
+
+<div class="chat-widget" id="chat-widget" role="dialog" aria-label="UTM Assistant chat">
+  <div class="chat-widget-head">
+    <div class="chat-widget-avatar"><svg viewBox="0 0 24 24"><use href="#i-bot"/></svg></div>
+    <div class="chat-widget-head-text">
+      <b data-i18n="chatWidget.title">UTM Assistant</b>
+      <span data-i18n="chatWidget.status">Online now · replies instantly</span>
+    </div>
+    <button class="chat-widget-close" id="chat-widget-close" aria-label="Close"><svg viewBox="0 0 24 24"><use href="#i-x"/></svg></button>
+  </div>
+  <div class="chat-widget-body" id="chat-widget-body"><!-- injected by JS --></div>
+  <div class="chat-widget-foot">
+    <div class="cw-input-row">
+      <input type="text" id="cw-input" data-i18n-placeholder="chatWidget.placeholder" placeholder="Type your message...">
+      <button class="cw-send" id="cw-send" aria-label="Send"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m22 2-7 20-4-9-9-4Z"/></svg></button>
+    </div>
+    <div class="cw-powered" data-i18n="chatWidget.powered">Powered by UTM · AI assistant</div>
+  </div>
+</div>
 
 <!-- ===================== WHATSAPP MODAL ===================== -->
 <div class="modal-overlay" id="wa-modal">
@@ -1503,18 +1685,131 @@ function hideWaNudge(){
 }
 
 setTimeout(()=>{
-  if(!waNudgeDismissed && !waModal.classList.contains("open")){
+  if(!waNudgeDismissed && !waModal.classList.contains("open") && !document.getElementById("chat-widget").classList.contains("open")){
     waNudge.classList.add("show");
   }
 }, 10000);
 
 waNudge.addEventListener("click", (e)=>{
   if(e.target.closest("#wa-nudge-close")) return;
-  openModal();
+  hideWaNudge();
+  openChatWidget();
 });
 document.getElementById("wa-nudge-close").addEventListener("click", (e)=>{
   e.stopPropagation();
   hideWaNudge();
+});
+
+/* =========================================================
+   CHAT ASSISTANT WIDGET
+========================================================= */
+const chatWidget = document.getElementById("chat-widget");
+const chatFab = document.getElementById("chat-fab");
+const chatBody = document.getElementById("chat-widget-body");
+const cwInput = document.getElementById("cw-input");
+let chatStarted = false;
+
+const WA_ICON_SVG = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 3.06 16.9L2 21l4.2-1.1a8.83 8.83 0 0 0 4.24 1.08h.01a8.86 8.86 0 0 0 8.85-8.85 8.8 8.8 0 0 0-1.7-5.81ZM10.45 19.4h-.01a7.35 7.35 0 0 1-3.75-1.03l-.27-.16-2.5.65.66-2.43-.17-.25a7.36 7.36 0 1 1 13.68-3.79 7.37 7.37 0 0 1-7.64 7.01Z"/></svg>';
+
+function scrollChatToBottom(){
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+function addChatMsg(role, text){
+  const div = document.createElement("div");
+  div.className = "cw-msg " + role;
+  div.textContent = text;
+  chatBody.appendChild(div);
+  scrollChatToBottom();
+  return div;
+}
+
+function escalateToWhatsApp(originalText){
+  const t = translations[currentLang].chatWidget;
+  addChatMsg("bot", t.fallback);
+  const btn = document.createElement("button");
+  btn.className = "cw-wa-cta";
+  btn.innerHTML = WA_ICON_SVG + "<span>" + t.waCta + "</span>";
+  btn.addEventListener("click", ()=>{
+    openModal();
+    waMessage.value = originalText;
+    waMessage.dataset.userEdited = "true";
+  });
+  chatBody.appendChild(btn);
+  scrollChatToBottom();
+}
+
+function findChatAnswer(rawText){
+  const text = rawText.toLowerCase();
+  const t = translations[currentLang].chatWidget;
+  const priceWords = ["price","pricing","cost","$","how much","quote","ثمن","سعر","تكلفة","فلوس"];
+  if(priceWords.some(w=>text.includes(w))) return "ESCALATE";
+  for(const item of t.knowledge){
+    if(item.keywords.some(k=>text.includes(k))) return item.a;
+  }
+  return null;
+}
+
+function renderChatGreeting(){
+  const t = translations[currentLang].chatWidget;
+  chatBody.innerHTML = "";
+  addChatMsg("bot", t.greeting);
+
+  const label = document.createElement("div");
+  label.className = "cw-suggested-label";
+  label.textContent = t.suggestedLabel;
+  chatBody.appendChild(label);
+
+  const chipsWrap = document.createElement("div");
+  chipsWrap.className = "cw-chips";
+  t.chips.forEach(chip=>{
+    const b = document.createElement("button");
+    b.className = "cw-chip";
+    b.textContent = chip.q;
+    b.addEventListener("click", ()=>{
+      addChatMsg("user", chip.q);
+      if(chip.a === "ESCALATE"){
+        escalateToWhatsApp(chip.q);
+      } else {
+        addChatMsg("bot", chip.a);
+      }
+      chatStarted = true;
+    });
+    chipsWrap.appendChild(b);
+  });
+  chatBody.appendChild(chipsWrap);
+}
+
+function openChatWidget(){
+  chatWidget.classList.add("open");
+  if(!chatStarted) renderChatGreeting();
+}
+function closeChatWidget(){
+  chatWidget.classList.remove("open");
+}
+
+chatFab.addEventListener("click", ()=>{
+  if(chatWidget.classList.contains("open")) closeChatWidget();
+  else openChatWidget();
+});
+document.getElementById("chat-widget-close").addEventListener("click", closeChatWidget);
+
+function sendChatMessage(){
+  const val = cwInput.value.trim();
+  if(!val) return;
+  addChatMsg("user", val);
+  cwInput.value = "";
+  chatStarted = true;
+  const answer = findChatAnswer(val);
+  if(answer === "ESCALATE" || answer === null){
+    escalateToWhatsApp(val);
+  } else {
+    addChatMsg("bot", answer);
+  }
+}
+document.getElementById("cw-send").addEventListener("click", sendChatMessage);
+cwInput.addEventListener("keydown", (e)=>{
+  if(e.key === "Enter") sendChatMessage();
 });
 
 /* =========================================================
