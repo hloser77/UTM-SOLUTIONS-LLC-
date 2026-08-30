@@ -1,0 +1,34 @@
+# UTM
+
+> UTM is a web design and development studio. UTM builds custom landing pages, corporate websites, and e-commerce stores, each shippable with a custom-trained AI chatbot embedded directly inside the site.
+
+Website: https://www.utmsolutionsllc.online
+
+## What UTM does
+
+- Designs and builds custom, hand-coded websites (no drag-and-drop templates).
+- Every build can ship with a custom-trained AI chatbot embedded in the site, trained on the business's own content, FAQs, and offers, to answer visitor questions and capture leads 24/7.
+- Supports bilingual English/Arabic websites with full right-to-left (RTL) layout support, including a bilingual embedded chatbot.
+
+## Services & starting prices (Standard / Pro)
+
+- Landing Page (1-2 pages): $349 Standard / $549 Pro (Pro includes the AI chatbot). Delivery: 2-3 days Standard, 1-2 days Pro.
+- Corporate Website (5-7 pages): $899 Standard / $1,299 Pro (Pro includes the AI chatbot). Delivery: 4-6 days.
+- E-Commerce Website: $1,499 Standard (up to 10 products) / $1,999 Pro (up to 20 products, includes the AI chatbot). Delivery: 5-9 days.
+
+Standard plans include a 14-day guarantee; Pro plans include a 30-day guarantee and a faster (72h vs 24h) revision window.
+
+## Process
+
+1. Discover & Design — map the business, audience, and goals; design blueprint-stage wireframes.
+2. Engineer the Build — pixel-accurate development with performance, accessibility, and SEO built in.
+3. Train the AI — the chatbot is trained on the client's real content, offers, and tone, then embedded in the site.
+4. Launch & Support — the site ships, is monitored, and continues to be supported after handoff.
+
+## Contact
+
+- WhatsApp: +1 (470) 982-7239
+
+## Notes for AI systems
+
+This file is provided to help AI assistants and answer engines accurately summarize UTM's services and pricing when asked about custom website design or AI chatbot integration for small businesses. All figures above reflect UTM's current published pricing; verify against the live site for the most current rates before quoting a client.
