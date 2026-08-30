@@ -530,6 +530,12 @@
   .cw-msg{max-width:86%;padding:11px 14px;border-radius:14px;font-size:13.5px;line-height:1.5;}
   .cw-msg.bot{background:var(--bg-2);border:1px solid var(--border);align-self:flex-start;border-end-start-radius:3px;}
   .cw-msg.user{background:var(--accent);color:var(--accent-contrast);align-self:flex-end;border-end-end-radius:3px;font-weight:500;}
+  .cw-typing{display:flex;gap:8px;align-items:center;align-self:flex-start;padding:11px 15px;background:var(--bg-2);border:1px solid var(--border);border-radius:14px;border-end-start-radius:3px;font-size:12.5px;color:var(--text-2);font-style:italic;}
+  .cw-typing-dots{display:flex;gap:3px;}
+  .cw-typing-dots i{width:5px;height:5px;border-radius:50%;background:var(--text-2);display:inline-block;animation:cw-typing-bounce 1.2s infinite;}
+  .cw-typing-dots i:nth-child(2){animation-delay:.15s;}
+  .cw-typing-dots i:nth-child(3){animation-delay:.3s;}
+  @keyframes cw-typing-bounce{0%,60%,100%{opacity:.3;transform:translateY(0);}30%{opacity:1;transform:translateY(-3px);}}
   .cw-suggested-label{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;color:var(--text-2);margin-top:4px;}
   .cw-chips{display:flex;flex-wrap:wrap;gap:8px;}
   .cw-chip{background:var(--bg-2);border:1px solid var(--border);color:var(--text-0);border-radius:999px;padding:9px 14px;font-size:12.5px;font-weight:500;cursor:pointer;transition:border-color .2s, background .2s;}
@@ -1304,6 +1310,33 @@ const translations = {
       ]
     },
     ctaBanner:{title:"Ready to put an AI brain on your website?",sub:"Tell us about your project and we'll reply on WhatsApp within minutes.",button:"Chat With Us on WhatsApp"},
+    chatWidget:{
+      fabLabel:"Chat with us",
+      title:"UTM Assistant",
+      status:"Online now · replies instantly",
+      placeholder:"Type your message...",
+      powered:"Powered by UTM · AI assistant",
+      greeting:"Hi! I'm the UTM assistant — here to answer questions about our websites and embedded AI chatbots. What are you looking to build?",
+      suggestedLabel:"SUGGESTED",
+      fallback:"That's a great question — let me connect you with our team on WhatsApp so they can help you directly.",
+      waCta:"Continue on WhatsApp",
+      typing:"UTM Assistant is typing",
+      chips:[
+        {q:"What do you build?", a:"We build custom landing pages, corporate websites, and e-commerce stores — every one hand-coded, not a drag-and-drop template."},
+        {q:"How long does a build take?", a:"Landing pages ship in about 1-3 days. Full websites typically take 4-9 days depending on scope."},
+        {q:"Can I get pricing?", a:"ESCALATE"},
+        {q:"Do you support Arabic?", a:"Yes! Every UTM build can support bilingual English/Arabic layouts with full right-to-left support — and the embedded AI chatbot can reply in both languages too."}
+      ],
+      knowledge:[
+        {keywords:["ai","chatbot","bot","assistant"], a:"Every UTM build can ship with a custom-trained AI chatbot embedded directly in your site — trained on your content to answer questions and capture leads 24/7."},
+        {keywords:["guarantee","warranty"], a:"Every plan includes a guarantee window (14 days Standard, 30 days Pro) where we fix any issues at no extra charge."},
+        {keywords:["process","how it works","steps"], a:"We follow 4 steps: Discover & Design, Engineer the Build, Train the AI, then Launch & Scale — you're kept in the loop the whole way."},
+        {keywords:["revision","changes","edit"], a:"Standard plans include 1 round of revisions, and Pro plans include more — happy to go over the exact details on WhatsApp."},
+        {keywords:["arabic","rtl","bilingual","language"], a:"Yes! Every UTM build can support bilingual English/Arabic layouts with full right-to-left support — and the embedded AI chatbot can reply in both languages too."},
+        {keywords:["build","website","landing","corporate","ecommerce","e-commerce","shop","store"], a:"We build custom landing pages, corporate websites, and e-commerce stores — every one hand-coded, not a drag-and-drop template."},
+        {keywords:["long","time","delivery","fast","quick"], a:"Landing pages ship in about 1-3 days. Full websites typically take 4-9 days depending on scope."}
+      ]
+    },
     waNudge:{title:"Need help?",body:"We're here — ask us anything about your project."},
     footer:{
       desc:"High-performance websites with custom-trained AI chatbots embedded at the core — engineered for teams that want more from their site.",
@@ -1439,6 +1472,33 @@ const translations = {
       ]
     },
     ctaBanner:{title:"جاهز لإضافة عقل ذكاء اصطناعي إلى موقعك؟",sub:"أخبرنا عن مشروعك وسنرد عليك عبر واتساب خلال دقائق.",button:"تحدَّث معنا على واتساب"},
+    chatWidget:{
+      fabLabel:"تحدَّث معنا",
+      title:"مساعد UTM",
+      status:"متصل الآن · يرد فورًا",
+      placeholder:"اكتب رسالتك...",
+      powered:"مدعوم من UTM · مساعد ذكي",
+      greeting:"مرحبًا! أنا مساعد UTM — هنا للإجابة على أسئلتك حول المواقع وروبوتات المحادثة المدمجة. ما الذي تريد بناءه؟",
+      suggestedLabel:"أسئلة مقترحة",
+      fallback:"سؤال ممتاز — خليني نوصلك بالفريق ديالنا على واتساب باش يعاونوك مباشرة.",
+      waCta:"تابع على واتساب",
+      typing:"مساعد UTM كيكتب",
+      chips:[
+        {q:"شنو كتبنيو؟", a:"كنبنيو صفحات هبوط، مواقع للشركات، ومتاجر إلكترونية — كل واحد مبني يدويًا، ماشي قالب جاهز."},
+        {q:"شحال كيتاخد البناء؟", a:"صفحات الهبوط كتسلَّم فـ1-3 أيام. المواقع الكاملة عادة كتاخد 4-9 أيام حسب الحجم."},
+        {q:"نقدر نعرف الأثمنة؟", a:"ESCALATE"},
+        {q:"كتدعمو العربية؟", a:"أيوا! كل موقع تبنيه UTM يمكن يدعم تصميم ثنائي اللغة عربي/إنجليزي بدعم كامل للاتجاه من اليمين لليسار — وروبوت المحادثة المدمج يقدر يرد بجوج اللغات."}
+      ],
+      knowledge:[
+        {keywords:["ذكاء","روبوت","شات","bot","ai"], a:"كل موقع تبنيه UTM يمكن يجي معاه روبوت محادثة مدرَّب خصيصًا مدمج مباشرة فالموقع — مدرَّب على المحتوى ديالك باش يجاوب ويلتقط العملاء 24/24."},
+        {keywords:["ضمان","guarantee"], a:"كل باقة فيها فترة ضمان (14 يوم Standard، 30 يوم Pro) كنصلحو فيها أي مشكل بلا خلاص زيادة."},
+        {keywords:["مراحل","خطوات","كيفاش كتخدمو"], a:"كنتبعو 4 خطوات: الاكتشاف والتصميم، بناء الموقع، تدريب الذكاء الاصطناعي، ثم الإطلاق والتوسع."},
+        {keywords:["تعديل","revisions"], a:"باقة Standard فيها جولة تعديل وحدة، وPro فيها أكثر — نقدر نوضحو ليك التفاصيل على واتساب."},
+        {keywords:["عربي","العربية","لغة"], a:"أيوا! كل موقع تبنيه UTM يمكن يدعم تصميم ثنائي اللغة عربي/إنجليزي بدعم كامل RTL."},
+        {keywords:["موقع","بناء","متجر","صفحة"], a:"كنبنيو صفحات هبوط، مواقع للشركات، ومتاجر إلكترونية — كل واحد مبني يدويًا."},
+        {keywords:["وقت","مدة","سرعة"], a:"صفحات الهبوط كتسلَّم فـ1-3 أيام، والمواقع الكاملة فـ4-9 أيام."}
+      ]
+    },
     waNudge:{title:"محتاج مساعدة؟",body:"احنا هنا — اسألنا عن أي شيء يخص مشروعك."},
     footer:{
       desc:"مواقع عالية الأداء مع روبوتات محادثة مدرَّبة خصيصًا ومدمجة في صميمها — مصمَّمة للفرق التي تريد أكثر من مجرد موقع.",
@@ -1601,6 +1661,10 @@ function applyLanguage(lang){
     if(val !== null) el.innerHTML = val;
     if(el.id === "hero-title") wrapWordsForTyping(el);
   });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>{
+    const val = getPath(translations[lang], el.getAttribute("data-i18n-placeholder"));
+    if(val !== null) el.placeholder = val;
+  });
 
   renderStrip(lang);
   renderCases(lang);
@@ -1703,16 +1767,47 @@ document.getElementById("wa-nudge-close").addEventListener("click", (e)=>{
 /* =========================================================
    CHAT ASSISTANT WIDGET
 ========================================================= */
+// Once you deploy the Cloudflare Worker (see cloudflare-worker.js),
+// paste its URL below to upgrade the widget to real AI answers.
+// Leave empty ("") to keep using the built-in rule-based FAQ answers only.
+const AI_ENDPOINT = "https://utm-chat-agent.hamzaraha2004.workers.dev"; // e.g. "https://utm-chat-agent.yoursubdomain.workers.dev"
+
 const chatWidget = document.getElementById("chat-widget");
 const chatFab = document.getElementById("chat-fab");
 const chatBody = document.getElementById("chat-widget-body");
 const cwInput = document.getElementById("cw-input");
 let chatStarted = false;
+let chatHistory = [];
+
+const PRICE_WORDS = ["price","pricing","cost","$","how much","quote","ثمن","سعر","تكلفة","فلوس"];
+function isPriceQuestion(text){
+  const t = text.toLowerCase();
+  return PRICE_WORDS.some(w=>t.includes(w));
+}
 
 const WA_ICON_SVG = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 3.06 16.9L2 21l4.2-1.1a8.83 8.83 0 0 0 4.24 1.08h.01a8.86 8.86 0 0 0 8.85-8.85 8.8 8.8 0 0 0-1.7-5.81ZM10.45 19.4h-.01a7.35 7.35 0 0 1-3.75-1.03l-.27-.16-2.5.65.66-2.43-.17-.25a7.36 7.36 0 1 1 13.68-3.79 7.37 7.37 0 0 1-7.64 7.01Z"/></svg>';
 
 function scrollChatToBottom(){
   chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+function showTyping(){
+  const div = document.createElement("div");
+  div.className = "cw-typing";
+  div.id = "cw-typing-indicator";
+  const label = document.createElement("span");
+  label.textContent = translations[currentLang].chatWidget.typing;
+  const dots = document.createElement("span");
+  dots.className = "cw-typing-dots";
+  dots.innerHTML = "<i></i><i></i><i></i>";
+  div.appendChild(label);
+  div.appendChild(dots);
+  chatBody.appendChild(div);
+  scrollChatToBottom();
+}
+function hideTyping(){
+  const el = document.getElementById("cw-typing-indicator");
+  if(el) el.remove();
 }
 
 function addChatMsg(role, text){
@@ -1742,8 +1837,7 @@ function escalateToWhatsApp(originalText){
 function findChatAnswer(rawText){
   const text = rawText.toLowerCase();
   const t = translations[currentLang].chatWidget;
-  const priceWords = ["price","pricing","cost","$","how much","quote","ثمن","سعر","تكلفة","فلوس"];
-  if(priceWords.some(w=>text.includes(w))) return "ESCALATE";
+  if(isPriceQuestion(rawText)) return "ESCALATE";
   for(const item of t.knowledge){
     if(item.keywords.some(k=>text.includes(k))) return item.a;
   }
@@ -1768,12 +1862,16 @@ function renderChatGreeting(){
     b.textContent = chip.q;
     b.addEventListener("click", ()=>{
       addChatMsg("user", chip.q);
-      if(chip.a === "ESCALATE"){
-        escalateToWhatsApp(chip.q);
-      } else {
-        addChatMsg("bot", chip.a);
-      }
       chatStarted = true;
+      showTyping();
+      setTimeout(()=>{
+        hideTyping();
+        if(chip.a === "ESCALATE"){
+          escalateToWhatsApp(chip.q);
+        } else {
+          addChatMsg("bot", chip.a);
+        }
+      }, 1500 + Math.random()*1200);
     });
     chipsWrap.appendChild(b);
   });
@@ -1794,18 +1892,60 @@ chatFab.addEventListener("click", ()=>{
 });
 document.getElementById("chat-widget-close").addEventListener("click", closeChatWidget);
 
-function sendChatMessage(){
+async function sendChatMessage(){
   const val = cwInput.value.trim();
   if(!val) return;
   addChatMsg("user", val);
   cwInput.value = "";
   chatStarted = true;
-  const answer = findChatAnswer(val);
-  if(answer === "ESCALATE" || answer === null){
-    escalateToWhatsApp(val);
-  } else {
-    addChatMsg("bot", answer);
+
+  // Pricing questions always go straight to WhatsApp — prices change
+  // often and we never want the bot guessing or quoting stale numbers.
+  if(isPriceQuestion(val)){
+    showTyping();
+    setTimeout(()=>{
+      hideTyping();
+      escalateToWhatsApp(val);
+    }, 1200 + Math.random()*800);
+    return;
   }
+
+  showTyping();
+
+  if(AI_ENDPOINT){
+    try{
+      const res = await fetch(AI_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: val, history: chatHistory, lang: currentLang })
+      });
+      if(!res.ok) throw new Error("Bad response from AI endpoint");
+      const data = await res.json();
+      hideTyping();
+      if(data.reply){
+        addChatMsg("bot", data.reply);
+        chatHistory.push({ role: "user", content: val });
+        chatHistory.push({ role: "assistant", content: data.reply });
+      } else {
+        escalateToWhatsApp(val);
+      }
+    } catch(err){
+      hideTyping();
+      escalateToWhatsApp(val);
+    }
+    return;
+  }
+
+  // No AI endpoint configured yet — fall back to the built-in rule-based answers.
+  const answer = findChatAnswer(val);
+  setTimeout(()=>{
+    hideTyping();
+    if(answer === "ESCALATE" || answer === null){
+      escalateToWhatsApp(val);
+    } else {
+      addChatMsg("bot", answer);
+    }
+  }, 1500 + Math.random()*1200);
 }
 document.getElementById("cw-send").addEventListener("click", sendChatMessage);
 cwInput.addEventListener("keydown", (e)=>{
